@@ -6,6 +6,7 @@ public class ejemplo1 {
 
         String nombre = "juanan";
         IO.println(nombre);
+        
     }
 
 }
