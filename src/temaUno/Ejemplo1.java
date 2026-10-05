@@ -25,8 +25,16 @@ public class Ejemplo1 {
 
         IO.println("el precio con iiva y un 2% de descuento es " + precioConIva);
 
+        if (precioConIva==0) 
+        {
+            gratis=true;
+        } 
+        else 
+        {
+            gratis=false;
+        }
 
-
+        IO.println("el producto es gratis: " + gratis);
     }
 
 }
