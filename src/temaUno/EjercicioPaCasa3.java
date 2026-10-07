@@ -8,7 +8,7 @@ public class EjercicioPaCasa3 {
 
         boolean dragon = false;
         boolean miniMini = false;
-
+        // COMO ME GUSTA A MI
         dragon = edad >= 12 && altura >= 140;
 
         if (dragon == true) {
@@ -24,6 +24,10 @@ public class EjercicioPaCasa3 {
         } else {
             IO.println("No puede entrar al mini mini");
         }
+
+        // COMO LE GUSTA A JAVI
+        IO.println("puede montar en dragon " + dragon);
+        IO.println("puede montar en mini mini " + miniMini);
     }
 
 }
