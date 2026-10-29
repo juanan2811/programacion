@@ -1,5 +1,7 @@
 package tema2.bucles;
 
+import java.util.Locale;
+
 public class ejerciciorepaso6 {
     static void main() {
         /*
@@ -11,17 +13,251 @@ public class ejerciciorepaso6 {
         mañana, 15 %, y en turno de tarde, 10 %. Realice un algoritmo para determinar cuánto debe
         pagar por cada concepto una persona que realiza una llamada.
          */
-        enum DiasSemana {
-            LUNES,
-            MARTES,
-            MIERCOLES,
-            JUEVES,
-            VIERNES,
-            SABADO,
-            DOMINGO
-        }
-        DiasSemana diasSemana;
-        double tiempoLlamada;
+
+
+        //declaro variables
+        IO.println("Dime el dia de la semana ");
+
+        String dias = IO.readln().toUpperCase();
+
+        double tiempoLlamada = 0.0;
+        double impuestos = 0.0;
+        double dinero = 0.0;
+
+        //pido el tiempo de llamada
+        tiempoLlamada = Double.parseDouble(IO.readln("dime el tiempo"));
+
+        //miro si es de lunes a sabado o un domingo
+        if (dias.equals("DOMINGO")){
+
+            //declaro los impuestos
+            impuestos = 0.03;
+            //compraro el tiempo de llamda
+            if (tiempoLlamada<=5.0){
+
+                //dinero sin impuestos
+                dinero = tiempoLlamada;
+
+                //dinero mas impestos
+                dinero = dinero+(dinero * impuestos);
+
+                IO.println("tienes que pagar en total: " + dinero);
+
+            } else if (tiempoLlamada<=8.0) {
+
+                //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                tiempoLlamada = tiempoLlamada - 5;
+                dinero = tiempoLlamada * 0.80;
+                dinero = dinero + 5;
+
+                //dinero mas impestos
+                dinero = dinero+(dinero * impuestos);
+
+                IO.println("tienes que pagar en total: " + dinero);
+
+            } else if (tiempoLlamada<=10.0) {
+
+                //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                tiempoLlamada = tiempoLlamada - 8;
+                dinero = tiempoLlamada * 0.70;
+                dinero = dinero + (3*0.80);
+                dinero = dinero + 5;
+
+                //dinero mas impestos
+                dinero = dinero+(dinero * impuestos);
+
+                IO.println("tienes que pagar en total: " + dinero);
+
+            }else {
+
+                //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                tiempoLlamada = tiempoLlamada - 10;
+                dinero = tiempoLlamada * 0.50;
+                dinero = dinero + (2*0.70);
+                dinero = dinero + (3*0.80);
+                dinero = dinero + 5;
+
+                //dinero as impuestos
+                dinero = dinero+(dinero * impuestos);
+
+                IO.println("tienes que pagar en total: " + dinero);
+            }
+        }else if (dias.equals("LUNES")||dias.equals("MARTES")||dias.equals("MIERCOLES")||dias.equals("JUEVES")||dias.equals("VIERNES")||dias.equals("SABADO")){
+
+            //miro si la llamda fue por la mñana o por la tarde
+            String horarioTeclado = IO.readln("dime si la llamada fue pot la mañana o par la tarde : ").toLowerCase();
+
+            if (horarioTeclado.equals("tarde")){
+
+                //pongo sus impuestos
+                impuestos = 0.10;
+
+                //compraro el tiempo de llamda
+                if (tiempoLlamada<=5.0){
+
+                    //dinero sin impuestos
+                    dinero = tiempoLlamada;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=8.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 5;
+                    dinero = tiempoLlamada * 0.80;
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=10.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 8;
+                    dinero = tiempoLlamada * 0.70;
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                }else {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 10;
+                    dinero = tiempoLlamada * 0.50;
+                    dinero = dinero + (2*0.70);
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero as impuestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+                }
+            } else if (horarioTeclado.equals("mañana")) {
+
+                //miro los impuestos
+                impuestos = 0.15;
+
+                //compraro el tiempo de llamda
+                if (tiempoLlamada<=5.0){
+
+                    //dinero sin impuestos
+                    dinero = tiempoLlamada;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=8.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 5;
+                    dinero = tiempoLlamada * 0.80;
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=10.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 8;
+                    dinero = tiempoLlamada * 0.70;
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                }else {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 10;
+                    dinero = tiempoLlamada * 0.50;
+                    dinero = dinero + (2*0.70);
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero as impuestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+                }
+            }else{
+                IO.println("es de madrugada tarifa sin impuestos!!!!");
+
+                //miro los impuestos
+                impuestos = 0.0;
+
+                //compraro el tiempo de llamda
+                if (tiempoLlamada<=5.0){
+
+                    //dinero sin impuestos
+                    dinero = tiempoLlamada;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=8.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 5;
+                    dinero = tiempoLlamada * 0.80;
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                } else if (tiempoLlamada<=10.0) {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 8;
+                    dinero = tiempoLlamada * 0.70;
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero mas impestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+
+                }else {
+
+                    //dinero sin impuestos y le resto los minutos de antes que ya se lo que valen
+                    tiempoLlamada = tiempoLlamada - 10;
+                    dinero = tiempoLlamada * 0.50;
+                    dinero = dinero + (2*0.70);
+                    dinero = dinero + (3*0.80);
+                    dinero = dinero + 5;
+
+                    //dinero as impuestos
+                    dinero = dinero+(dinero * impuestos);
+
+                    IO.println("tienes que pagar en total: " + dinero);
+                }
+            }
+        }else {
+                IO.println("no inventes anda");
+            }
+
 
     }
 }
